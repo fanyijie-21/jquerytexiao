@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>转盘抽奖</title>
+
+    <link rel="stylesheet" href="css/index.css">
+</head>
+
+<body>
+    <div class="box-lottery">
+        <div class="lottery-wrap" style="transform: rotate(-45deg);">
+            <span class="lottery-span1" data-id="8">
+                <i>泡面</i><img src="img/paomian.jpg" alt="">
+            </span>
+            <span class="lottery-span2" data-id="7">
+                <i>辣条</i><img src="img/latiao.jpg" alt="">
+            </span>
+            <span class="lottery-span3" data-id="6">
+                <i>饼干</i><img src="img/binggan.jpg" alt="">
+            </span>
+            <span class="lottery-span4" data-id="5">
+                <i>火锅</i><img src="img/huoguo.jpg" alt="">
+            </span>
+            <span class="lottery-span5" data-id="1">
+                <i>减肥</i><img src="img/jianfei.jpg" alt="">
+            </span>
+            <span class="lottery-span6" data-id="4">
+                <i>蛋糕</i><img src="img/dangao.jpg" alt="">
+            </span>
+            <span class="lottery-span7" data-id="3">
+                <i>奶茶</i><img src="img/naicha.jpg" alt="">
+            </span>
+            <span class="lottery-span8" data-id="2">
+                <i>冰淇淋</i><img src="img/bingqilin.jpg" alt="">
+            </span>
+        </div>
+        <a class="lottery-btn" href="javascript:void(0);"><i></i>立即抽奖</a>
+    </div>
+
+    <script src="https://libs.baidu.com/jquery/1.10.2/jquery.min.js"></script>
+    <script src="js/lib/anime.min.js"></script>
+    <script src="js/app/lottery.js"></script>
+    <script>
+        var Lottery = Turntable.create();
+        $('.lottery-btn').on('click', function(){
+            var num = Math.floor(Math.random() * 8);
+            Lottery.start(num, function(index){
+                alert($('span').eq(index).find('i').text());
+                console.log('index', index, 'lottery-span', 'lottery-span'+(index+1));
+            });
+        });
+    </script>
+</body>
+
+</html>

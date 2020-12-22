@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>jQuery拖动滑块图片转正验证代码</title>
+
+<script src="js/jquery.min.js"></script>
+<script src="js/jqRotateVerify.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+<body>
+
+<div id="rotateWrap" style="margin-top:50px;">
+	
+</div>
+<div style="text-align: center;margin-top: 50px;">
+	<button type="button" id="resetBtn" style="height: 30px;">重置</button>
+	<button type="button" id="testBtn" style="height: 30px;">状态测试</button>
+</div>
+<div id="rotateWrap2" style="margin-top:50px;">
+	
+</div>
+<script type="text/javascript">
+	$(function(){
+		//1
+		var myRotateVerify = new RotateVerify('#rotateWrap',{
+			initText:'滑动将图片转正',//默认
+			slideImage:['img/111.jpg','img/222.jpg','img/444.jpg','img/333.jpg'],//arr  [imgsrc1,imgsrc2] 或者str 'imgsrc1'
+			slideAreaNum:10,// 误差范围角度 +- 10(默认)
+			getSuccessState:function (res) {//验证通过 返回  true;
+				console.log('例1' + res);
+			}
+		})
+		//重置 
+		$("#resetBtn").on('click',function(){
+			myRotateVerify.resetSlide();
+		})
+		//可拿到 验证状态 
+		$("#testBtn").on('click',function(){
+			alert(myRotateVerify.verifyState);
+		})
+	})
+</script>
+
+</body>
+</html>

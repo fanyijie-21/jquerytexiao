@@ -1,0 +1,37 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Loading加载</title>
+
+<link type="text/css" href="css/style.css" rel="stylesheet" />
+
+<script type="text/javascript" src="js/jquery.min.js"></script>
+
+</head>
+<body>
+
+<div class="loading-page">
+	<div class="counter">
+		<p>loading</p>
+		<h1>0%</h1>
+    <hr/>
+	</div>
+</div>
+
+<script type="text/javascript">
+$(document).ready(function() {
+  var c = 0;
+  var i = setInterval(function(){
+      $(".counter h1").html(c + "%");
+      $(".counter hr").css("width", c + "%");  //hr标签用来定义一条水平线
+    c++;      
+    if(c == 101) {
+        clearInterval(i);
+    }
+  }, 50);
+});
+</script>
+
+</body>
+</html>

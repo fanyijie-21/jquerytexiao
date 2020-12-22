@@ -1,0 +1,102 @@
+*{
+	margin:0;padding:0;
+} 
+.widgets__img_check_box{
+	position:relative;
+	text-align:center;
+}
+.widgets__img_display{
+	position:relative;
+	padding:16px 16px 7px;
+	border:1px solid #ddd;
+	background:#f2ece1;
+	border-radius:16px;
+	overflow:hidden;margin:auto
+}
+.widgets__img_cnt{
+	position:relative;     
+}
+
+.widgets__img_src, .widgets__img_fragment_hollow{
+	position:absolute;
+	left:0px;
+	top:0px;
+	z-index:10;
+}
+ .widgets__img_src{
+	position:relative;
+	box-shadow: 0px 0px 6px 0px #73706e;
+}
+.widgets__img_fragment_cnt{
+	top:0px;
+	left:-50px;
+	position:absolute;
+}
+.widgets__img_fragment_cnt .widgets__img_fragment_content
+, .widgets__img_fragment_cnt .widgets__img_fragment{
+	position:absolute;
+	z-index:20;
+}
+.widgets__smooth_cnt{       
+	position:relative;
+	background-color:aqua;
+	height:50px;
+	width:80%;
+	margin:auto;
+	margin-top:20px;
+	border-left:20px solid #f2ece1;
+	border-right:20px solid #f2ece1;
+	border-radius:24px;
+	background-color:#f2ece1;
+}
+.widgets__smooth_bar,.widgets__smooth_circle{
+   position:relative;  
+   top:50%;     
+   transform:translateY(-50%);
+}
+.widgets__smooth_bar{
+	width:100%;
+	height:10px;
+	background-color:#f27171;
+	border-radius:24px;        
+}
+.widgets__smooth_circle{ 
+	position:absolute;
+	width:30px;
+	height:30px;
+	background-color:#827878;
+	border-radius:50%;    
+	box-shadow:0px 0px 6px 0px #73706e;
+	cursor:pointer;     
+}
+
+.widgets__icon_refresh{
+	display:block;
+	position:relative;
+	width:16px;
+	height:16px;
+	padding:2px;
+	border: 4px solid transparent;
+	cursor:pointer;
+}
+
+.widgets__icon_refresh:before{
+	position:absolute;
+	content:"";
+	display:block;
+	width:calc(100% - 4px);
+	height:calc(100% - 4px);
+	border-radius:100%;
+	border:2px solid #b7b7b7;
+	border-top:2px solid transparent;
+	-webkit-transform: rotate(45deg);
+}
+.widgets__icon_refresh:after{
+	position:absolute;
+	content:"";
+	display:block;
+	border: 7px solid transparent;
+	border-left: 7px solid #b7b7b7;
+	left:50%;
+	top:-3.5px;
+}

@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>jQuery图片拼图验证</title>
+
+<!--插件样式-->
+<link href="css/img_smooth_check.css" type="text/css" rel="stylesheet" />
+
+<script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
+<script type="text/javascript" src="js/img_smooth_check.js"></script>
+
+
+<body>
+
+<div class="widgets__img_check_box" id="select" style="width:600px;margin:0 auto;top:2px;">           
+	<div class="widgets__img_display">
+		<div class="widgets__img_cnt">
+			<img src1="a.jpg" class="widgets__img_src" />
+			<canvas class="widgets__img_fragment_hollow"></canvas>
+			<div class="widgets__img_fragment_cnt">
+				<canvas class="widgets__img_fragment widgets__img_fragment_shadow"></canvas>
+				<canvas class="widgets__img_fragment widgets__img_fragment_content"></canvas>
+			</div>
+			<div class="widgets__icon_refresh"></div>
+		</div>                
+	</div>            
+	<div class="widgets__smooth_cnt">
+		<div class="widgets__smooth_bar"></div>
+		<div class="widgets__smooth_circle"></div>
+	</div>
+</div>
+
+<div class="refresh" style="margin-top:30px; text-align:center;">点击刷新</div>
+
+<script type="text/javascript">   
+var s = WIDGETS.imgSmoothCheck({
+	selector: "#select",
+	data: ["img/111.jpg","img/222.jpg","img/333.jpg","img/444.jpg"],
+	imgHeight: 300,
+	imgWidth: 240,
+	allowableErrorValue:4 ,
+	success: function () {
+		alert("成功");
+	},
+	error: function (res) {
+		alert('重新再试');
+	}
+});
+$(".refresh").on("click", function () {
+	s.refresh();
+});
+</script>
+
+</body>
+</html>

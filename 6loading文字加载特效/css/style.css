@@ -1,0 +1,60 @@
+@charset "utf-8";
+html {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+}
+
+* {
+  box-sizing: inherit;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #151924;
+  padding:0;
+  margin:0;
+}
+
+.loading {
+  --color: #F5F9FF;
+  --duration: 2000ms;
+  font-family: Roboto, Arial;
+  font-size: 24px;
+  position: relative;
+  white-space: nowrap;
+  user-select: none;
+  color: var(--color);
+}
+.loading span {
+  --x: 0;
+  --y: 0;
+  --move-y: 0;
+  --move-y-s: 0;
+  --delay: 0ms;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1px;
+  text-indent: calc(var(--x) * -1);
+  overflow: hidden;
+  transform: translate(var(--x), var(--y));
+}
+.loading.start div {
+  opacity: 0;
+}
+.loading.start span {
+  animation: move var(--duration) ease-in-out var(--delay);
+}
+
+@keyframes move {
+  30% {
+    transform: translate(var(--x), var(--move-y));
+  }
+  82% {
+    transform: translate(var(--x), var(--move-y-s));
+  }
+}
